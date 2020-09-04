@@ -1,0 +1,12 @@
+- name: Download vim config
+  git:
+      repo: 'https://github.com/nkauppila/dotfiles.git'
+      dest: '{{ ansible_env.HOME }}/src/dotfiles'
+- name: Install vim config
+  file:
+      src: '{{ ansible_env.HOME }}/src/dotfiles/vim/vimrc'
+      dest: '{{ ansible_env.HOME }}/.vim/vimrc'
+      state: link
+- name: Initialize vim config
+  shell: vim -E -s -c 'source {{ ansible_env.HOME }}/.vim/vimrc' +PluginInstall +qall
+

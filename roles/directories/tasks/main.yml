@@ -1,0 +1,7 @@
+- name: Create directories
+  file:
+    path: '{{ item }}'
+    state: directory
+  loop:
+    - '{{ ansible_env.HOME }}/src'
+    - '{{ ansible_env.HOME }}/.vim'
