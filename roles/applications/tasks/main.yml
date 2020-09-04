@@ -24,3 +24,4 @@
 
 - import_tasks: vim.yml
 - import_tasks: zsh.yml
+- import_tasks: vscode.yml

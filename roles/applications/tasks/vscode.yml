@@ -1,0 +1,8 @@
+- name: Download vscode debian package
+  get_url:
+    url: https://go.microsoft.com/fwlink/?LinkID=760868
+    dest: /tmp/vscode.deb
+- name: Install vscode from .deb package
+  become: yes
+  apt:
+    deb: /tmp/vscode.deb
