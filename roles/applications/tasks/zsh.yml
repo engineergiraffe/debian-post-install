@@ -1,0 +1,9 @@
+- name: Download zsh prompt
+  git:
+      repo: 'https://github.com/olivierverdier/zsh-git-prompt.git'
+      dest: '{{ ansible_env.HOME }}/.zsh/git-prompt'
+- name: Copy zshrc
+  copy:
+      src: 'zshrc'
+      dest: '{{ ansible_env.HOME }}/.zshrc'
+

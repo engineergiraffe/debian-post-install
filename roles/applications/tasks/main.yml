@@ -13,6 +13,14 @@
       - vim
       - wget
       - curl
+      - zsh
       - wireshark
 
+- name: Change default shell
+  become: yes
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /usr/bin/zsh
+
 - import_tasks: vim.yml
+- import_tasks: zsh.yml
