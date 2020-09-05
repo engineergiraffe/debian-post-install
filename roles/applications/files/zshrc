@@ -45,3 +45,5 @@ alias ll="ls -l"
 
 export PATH=$HOME/bin/:$PATH
 
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+
