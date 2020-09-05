@@ -1,8 +1,2 @@
 - name: Remap to capslock to esc
-  shell: xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"
-- name: Persist xmodmap
-  shell: xmodmap -pke > ~/.xmodmap
-- name: Copy .xinitrc
-  copy:
-    src: 'xinitrc'
-    dest: '{{ ansible_env.HOME }}/.xinitrc'
+  shell: dconf write "/org/gnome/desktop/input-sources/xkb-options" "['caps:escape']"
