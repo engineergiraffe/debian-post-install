@@ -2,10 +2,12 @@
   become: yes
   apt:
       update_cache: true
+
 - name: Upgrade
   become: yes
   apt:
       upgrade: full
+
 - name: Install packages
   become: yes 
   apt:

@@ -3,12 +3,14 @@
   stat:
     path: '{{ ansible_env.HOME }}/bin/ghidra'
   register: ghidra
+
 - name: Install Ghidra
   unarchive:
     src: https://ghidra-sre.org/ghidra_9.1.2_PUBLIC_20200212.zip
     dest: '{{ ansible_env.HOME }}/bin'
     remote_src: yes
   when: not ghidra.stat.exists
+
 - name: Create link to bin directory
   file:
       src: '{{ ansible_env.HOME }}/bin/ghidra_9.1.2_PUBLIC/ghidraRun'
