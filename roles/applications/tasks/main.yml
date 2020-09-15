@@ -25,6 +25,24 @@
       - iptables-persistent
       - traceroute
       - nmap
+      - ntp
+
+- name: Copy ntp config
+  become: yes
+  copy:
+    src: 'ntp.conf'
+    dest: /etc/ntp.conf
+
+- name: Restart npt service
+  become: yes
+  shell: systemctl restart ntp
+
+- name: Install vim config
+  become: yes
+  file:
+      src: '/usr/share/zoneinfo/Europe/Helsinki'
+      dest: '/etc/localtime'
+      state: link
 
 - name: Create bin directory to HOME
   file:
