@@ -23,6 +23,8 @@
       - default-jdk
       - iptables
       - iptables-persistent
+      - traceroute
+      - nmap
 
 - name: Create bin directory to HOME
   file:
