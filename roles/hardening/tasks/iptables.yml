@@ -1,0 +1,66 @@
+- name: Add default policy for INPUT chain
+  become: yes
+  iptables:
+    ip_version: "{{item}}"
+    chain: INPUT
+    policy: DROP
+  with_items: ["ipv4", "ipv6"]
+
+- name: Add default policy for FORWARD chain
+  become: yes
+  iptables:
+    ip_version: "{{item}}"
+    chain: FORWARD
+    policy: DROP
+  with_items: ["ipv4", "ipv6"]
+
+- name: Add default policy for OUTPUT chain
+  become: yes
+  iptables:
+    ip_version: "{{item}}"
+    chain: OUTPUT
+    policy: ACCEPT
+  with_items: ["ipv4", "ipv6"]
+
+- name: Allow loopback connections
+  become: yes
+  iptables:
+    ip_version: "{{item}}"
+    chain: INPUT
+    jump: ACCEPT
+    in_interface: lo
+  with_items: ["ipv4", "ipv6"]
+
+- name: Allow loopback connections
+  become: yes
+  iptables:
+    ip_version: "{{item}}"
+    chain: OUTPUT
+    jump: ACCEPT
+    out_interface: lo
+  with_items: ["ipv4", "ipv6"]
+
+- name: Allow related and established connections
+  become: yes
+  iptables:
+    ip_version: "{{item}}"
+    chain: INPUT
+    ctstate: ESTABLISHED,RELATED
+    jump: ACCEPT
+  with_items: ["ipv4", "ipv6"]
+
+- name: Drop all other incoming connections
+  become: yes
+  iptables:
+    ip_version: "{{item}}"
+    chain: INPUT
+    jump: DROP
+  with_items: ["ipv4", "ipv6"]
+
+- name: Save iptables rules
+  become: yes
+  shell: iptables-save > /etc/iptables/rules.v4
+
+- name: Save ip6tables rules
+  become: yes
+  shell: iptables-save > /etc/iptables/rules.v6

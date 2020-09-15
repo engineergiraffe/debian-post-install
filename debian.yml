@@ -5,3 +5,4 @@
   roles:
       - { role: 'applications', tags: 'applications' }
       - { role: 'keyboard', tags: 'keyboard' }
+      - { role: 'hardening', tags: 'hardening' }

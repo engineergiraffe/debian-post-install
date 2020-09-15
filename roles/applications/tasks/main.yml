@@ -21,6 +21,8 @@
       - wireshark
       - default-jre
       - default-jdk
+      - iptables
+      - iptables-persistent
 
 - name: Create bin directory to HOME
   file:
