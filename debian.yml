@@ -3,5 +3,5 @@
 - name: Automated install for Debian system
   hosts: localhost
   roles:
-      - applications
-      - keyboard
+      - { role: 'applications', tags: 'applications' }
+      - { role: 'keyboard', tags: 'keyboard' }
