@@ -37,7 +37,7 @@
   become: yes
   shell: systemctl restart ntp
 
-- name: Install vim config
+- name: Configure timezone
   become: yes
   file:
       src: '/usr/share/zoneinfo/Europe/Helsinki'
