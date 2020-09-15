@@ -13,6 +13,7 @@
   apt:
       pkg:
       - vim
+      - tig
       - wget
       - curl
       - zsh
