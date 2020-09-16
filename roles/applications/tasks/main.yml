@@ -70,3 +70,4 @@
 - import_tasks: zsh.yml
 - import_tasks: vscode.yml
 - import_tasks: ghidra.yml
+- import_tasks: burpsuite.yml

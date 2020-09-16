@@ -1,0 +1,7 @@
+- name: Download burpsuite
+  get_url:
+    url: https://portswigger.net/burp/releases/download?product=community&version=2020.9.1&type=Linux
+    dest: '{{ ansible_env.HOME }}/bin/burpsuite'
+
+- name: Set permissions for burpsuite
+  shell: chmod +x '{{ ansible_env.HOME }}'/bin/burpsuite
