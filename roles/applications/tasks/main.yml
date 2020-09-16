@@ -26,6 +26,10 @@
       - traceroute
       - nmap
       - ntp
+      - rustc
+      - tcpdump
+      - aircrack-ng
+      - apktool
 
 - name: Copy ntp config
   become: yes
