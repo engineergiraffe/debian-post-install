@@ -65,6 +65,7 @@
     repo: https://github.com/danielmiessler/SecLists.git
     dest: '{{ ansible_env.HOME }}/src/seclists'
 
+- import_tasks: git.yml
 - import_tasks: vim.yml
 - import_tasks: zsh.yml
 - import_tasks: vscode.yml
