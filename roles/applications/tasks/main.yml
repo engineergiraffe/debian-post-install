@@ -30,6 +30,7 @@
       - tcpdump
       - aircrack-ng
       - apktool
+      - xclip
 
 - name: Copy ntp config
   become: yes
