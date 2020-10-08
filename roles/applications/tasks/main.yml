@@ -30,6 +30,7 @@
       - aircrack-ng
       - apktool
       - xclip
+      - apt-transport-https
 
 - name: Copy ntp config
   become: yes
@@ -70,3 +71,4 @@
 - import_tasks: vscode.yml
 - import_tasks: ghidra.yml
 - import_tasks: burpsuite.yml
+- import_tasks: brave.yml
