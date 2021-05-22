@@ -31,6 +31,10 @@
       - apktool
       - xclip
       - apt-transport-https
+      - dnsutils
+      - forensics-all
+      - dnsrecon
+      - telnet
 
 - name: Copy ntp config
   become: yes
